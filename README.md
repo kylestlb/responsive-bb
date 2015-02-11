@@ -1,8 +1,8 @@
 How to build:
 
-`npm install
-bower install
-npm start`
+`npm install`
+`bower install`
+`npm start`
 
 Project tracking in the README for now because lazy...
 
