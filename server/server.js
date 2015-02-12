@@ -1,13 +1,18 @@
-var express = require('express')
-var app = express()
+var express = require('express'), 
+	path = require('path'),
+	errorhandler = require('errorhandler'),
+	routes = require('./routes'),
+	app = express();
 
-// for now, send message to client (eventually routing will
-// be done in client and express will only be used for initial
-// server side rendering & restful API
+// serve static files
 
-app.get('/',function(req,res){
-	res.send('bonjour world');
-});
+app.use(express.static(path.join(__dirname, '../client')));
+app.use(errorhandler());
+
+app.get('/',routes.index);
+// insert RESTful routes here:
+// app.get('/posts',...
+// etc
 
 var server = app.listen(3000, function () {
 	var host = server.address().address;
