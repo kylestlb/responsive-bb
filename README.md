@@ -4,6 +4,10 @@ How to build:
 
 `bower install`
 
+Then, need to compile JSX into pure JS (when we decide to do extreme tooling, this can be avoided).
+
+`jsx --extension jsx client/components client/components/build`
+
 `npm start`
 
 Project tracking in the README for now because lazy...
